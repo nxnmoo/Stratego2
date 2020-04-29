@@ -1,7 +1,12 @@
 ## Németh Beatrix Johanna
+
 ## NXNMOO
+
 ## Kliensoldali webprogramozás, "Stratego - 1. felvonás"
+
 ## 2020.04.29
+
+[CodeSandbox link](https://codesandbox.io/s/github/nxnmoo/Stratego1)
 
 Ezt a megoldást Németh Beatrix Johanna (NXNMOO) küldte be és készítette a Kliensoldali webprogramozás kurzus "Stratego - 1. felvonás" feladatához.
 Kijelentem, hogy ez a megoldás a saját munkám.
