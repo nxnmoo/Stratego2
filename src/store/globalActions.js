@@ -9,6 +9,7 @@ export const AppStates = {
 
 export const CHANGE_APP_STATE = "CHANGE_APP_STATE";
 export const SET_HOVERED_GRID = "SET_HOVERED_GRID";
+export const SET_SELECTED_GRID = "SET_SELECTED_GRID";
 
 export function changeAppState(newAppState) {
   console.log("changeAppState: " + newAppState);
@@ -21,6 +22,14 @@ export function changeAppState(newAppState) {
 export function setHoveredGrid(x, y) {
   return {
     type: SET_HOVERED_GRID,
+    x,
+    y,
+  };
+}
+
+export function setSelectedGrid(x, y) {
+  return {
+    type: SET_SELECTED_GRID,
     x,
     y,
   };

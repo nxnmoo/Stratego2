@@ -3,7 +3,7 @@ import { Container, Header, Image } from "semantic-ui-react";
 import { v4 as uuidv4 } from "uuid";
 import { NavButton } from "../components/common/NavButton";
 import ClipboardControl from "../components/common/ClipboardControl";
-import { AppStates } from "../store/actions";
+import { AppStates } from "../store/globalActions";
 
 export function LobbyRoute() {
   const uuid = uuidv4();

@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Divider, Header, Icon, Image } from "semantic-ui-react";
 import { NavButton } from "../components/common/NavButton";
-import { AppStates } from "../store/actions";
+import { AppStates } from "../store/globalActions";
 
 export function MainPageRoute() {
   return (

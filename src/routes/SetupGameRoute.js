@@ -4,7 +4,7 @@ import { Container, Header } from "semantic-ui-react";
 import { NavButton } from "../components/common/NavButton";
 import Board from "../components/game/Board";
 import FigureStore from "../components/game/FigureStore";
-import { AppStates } from "../store/actions";
+import { AppStates } from "../store/globalActions";
 
 function SetupGameRoute(state) {
   return (
@@ -18,13 +18,23 @@ function SetupGameRoute(state) {
             cols={state.globalState.boardSizeX}
             rows={state.globalState.boardSizeY}
           />
-          <FigureStore cols={12} rows={1} />
+          <FigureStore
+            cols={12}
+            rows={1}
+            hasHeader={true}
+            pTop={5}
+            playerId={1}
+          />
         </Container>
       </div>
       <div style={{ width: 300, margin: "auto" }}>
         <Container textAlign="center">
           <NavButton
             state={AppStates.IN_GAME}
+            enabled={
+              state.gameState.figures[0].every((x) => x === 0) &&
+              state.globalState.selectedX === -1
+            }
             caption="Kész, indulhat a csata!"
             color="green"
             icon="check"

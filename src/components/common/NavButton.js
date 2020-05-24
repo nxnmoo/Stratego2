@@ -1,10 +1,12 @@
 import React from "react";
 import { Button, Icon } from "semantic-ui-react";
-import { AppStates, changeAppState } from "../../store/actions";
+import { AppStates, changeAppState } from "../../store/globalActions";
+import { startNewGame } from "../../store/gameActions";
 import { store } from "../../store/store";
 
 export function NavButton({
   state = AppStates.MAIN_PAGE,
+  enabled = true,
   caption = "Vissza",
   color = "olive",
   icon = "angle double left",
@@ -15,11 +17,15 @@ export function NavButton({
     <>
       <div style={{ height: marginTop }}></div>
       <Button
+        disabled={!enabled}
         color={color}
         icon
         labelPosition="left"
         fluid
-        onClick={() => store.dispatch(changeAppState(state))}
+        onClick={() => {
+          if (state === AppStates.PREPARE_GAME) store.dispatch(startNewGame());
+          store.dispatch(changeAppState(state));
+        }}
       >
         <Icon name={icon} />
         {caption}

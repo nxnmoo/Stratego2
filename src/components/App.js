@@ -6,7 +6,7 @@ import { LobbyRoute } from "../routes/LobbyRoute";
 import { ConnectToGameRoute } from "../routes/ConnectToGameRoute";
 import SetupGameRoute from "../routes/SetupGameRoute";
 import IngameRoute from "../routes/IngameRoute";
-import { AppStates } from "../store/actions";
+import { AppStates } from "../store/globalActions";
 
 const bkgImage = require("../images/background.jpg");
 const containerStyle = {

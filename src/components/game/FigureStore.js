@@ -20,7 +20,10 @@ class FigureStore extends React.Component {
       for (let j = 0; j < this.props.cols; j++) {
         grids.push(
           <Grid.Column style={columnStyle} key={"col_" + j}>
-            <Figure id={i * this.props.cols + j} />
+            <Figure
+              id={i * this.props.cols + j}
+              playerId={this.props.playerId}
+            />
           </Grid.Column>
         );
       }
@@ -34,10 +37,11 @@ class FigureStore extends React.Component {
   };
 
   render() {
+    const { hasHeader, pTop } = this.props;
     return (
       <>
-        <h4>Egységeid:</h4>
-        <div style={{ height: 5 }}></div>
+        {hasHeader ? <h4>Egységeid:</h4> : ""}
+        <div style={{ height: pTop }}></div>
         <Grid columns={this.props.cols}>{this.createFigureStore()}</Grid>
       </>
     );
